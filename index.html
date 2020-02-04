@@ -213,21 +213,36 @@ A [[mirror-&gt;Mirror]] sits on top of it.
 
 [[Return-&gt;Master Bedroom]]</tw-passagedata><tw-passagedata pid="13" name="Window" tags="donotshowinventory" position="1163,190" size="100,100">{
 
-(if: (history:) contains &quot;Window&quot;) + (unless: (history:) contains &quot;Mirror&quot;)[Uh, you could keep staring out the window... but there&#39;s probably like, some type of objective here... or not?]
+(if: (history:) contains &quot;Window&quot;) + (unless: (history:) contains &quot;Mirror&quot;)[Uh, you could keep staring out the window... but there&#39;s probably like, some type of objective here... or not?
+
+&lt;br&gt;&lt;br&gt;
+
+[[Return-&gt;Master Bedroom]]
+
+]
+
+(elseif: (history:) contains &quot;Mirror&quot; and &quot;Window&quot;) + (if: $inv contains &quot;Iphone&quot;)[You see a dark brown cat with blue eyes. It&#39;s the best looking cat you&#39;ve ever seen in your life. Muscular, well groomed, etc. It&#39;s jumping up to the window, as if to get your attention...
+
+[[Return-&gt;Tobecontinued]] 
+
+]
 
 
-(elseif: (history:) contains &quot;Mirror&quot; and &quot;Window&quot;)[You see a dark brown cat with blue eyes. It&#39;s the best looking cat you&#39;ve ever seen in your life. Muscular, well groomed, etc. It&#39;s jumping up to the window, as if to get your attention...]
 
+(else:)[It&#39;s dark.
 
+&lt;br&gt;&lt;br&gt;
 
-(else:)[It&#39;s dark.]
+[[Return-&gt;Master Bedroom]]
+
+]
 
 
 
 
 }
 
-[[Return-&gt;Tobecontinued]]</tw-passagedata><tw-passagedata pid="14" name="Mirror" tags="donotshowinventory" position="791,713" size="100,100">As your Cosmo-Kramer looking ass half admires your hair, you see a flash of movement reflected in the mirror from the window behind you.
+</tw-passagedata><tw-passagedata pid="14" name="Mirror" tags="donotshowinventory" position="791,713" size="100,100">As your Cosmo-Kramer looking ass half admires your hair, you see a flash of movement reflected in the mirror from the window behind you.
 
 (link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="15" name="Closet" tags="donotshowinventory" position="680,120" size="100,100">(if: (history:) contains &quot;Closet&quot;)[This bitch again... I guess I&#39;ll sing you a song once again...
 
@@ -418,7 +433,7 @@ Flush
 Universal Translator</tw-passagedata><tw-passagedata pid="25" name="Locked Iphone" tags="" position="1581,339" size="100,100">(set: $codeinput to (prompt: &quot;Enter Password&quot;, &quot;&quot; ))
 
 
-(if: $codeinput is &quot;Big Ass&quot; or &quot;big ass&quot; or &quot;Big ass&quot; or &quot;BIG ASS&quot;)[[Unlocked-&gt;UnlockedPhone]]
+(if: $codeinput is &quot;Big Ass&quot; or &quot;big ass&quot; or &quot;Big ass&quot; or &quot;BIG ASS&quot;)[[Click to Unlock Iphone-&gt;UnlockedPhone]]
 
 
 
@@ -467,7 +482,7 @@ The battery is dead.</tw-passagedata><tw-passagedata pid="27" name="UnlockedPhon
 [[Get out of bed-&gt;Master Bedroom]] 
 
 ]
-</tw-passagedata><tw-passagedata pid="30" name="Tobecontinued" tags="" position="1173,346" size="100,100">To be continued...
+</tw-passagedata><tw-passagedata pid="30" name="Tobecontinued" tags="donotshowinventory" position="1173,346" size="100,100">To be continued...
 
 
 &lt;h1&gt;HAPPY BIRTHDAY EMILY! 
